@@ -1,11 +1,12 @@
 package com.example.RealTimeChat.chat;
 
-import java.util.Objects;
-
 public class ChatMessage {
-	private final MessageType type;
-	private final String content;
-	private final User sender;
+	private MessageType type;
+	private String content;
+	private User sender;
+
+//	public ChatMessage() {
+//	}
 
 	public ChatMessage(MessageType type, String content, User sender) {
 		this.type = type;
@@ -17,33 +18,47 @@ public class ChatMessage {
 		return type;
 	}
 
+	public void setType(MessageType type) {
+		this.type = type;
+	}
+
 	public String getContent() {
 		return content;
 	}
-	
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
 	public User getSender() {
 		return sender;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(type, content);
+	public void setSender(User sender) {
+		this.sender = sender;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ChatMessage other = (ChatMessage) obj;
-		return type == other.type && Objects.equals(content, other.content);
-	}
 
-	@Override
-	public String toString() {
-		return "ChatMessage [type=" + type + ", content=" + content + ", sender=" + sender +"]";
-	}
+
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(type, content);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		ChatMessage other = (ChatMessage) obj;
+//		return type == other.type && Objects.equals(content, other.content);
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "ChatMessage [type=" + type + ", content=" + content + ", sender=" + sender +"]";
+//	}
 }
